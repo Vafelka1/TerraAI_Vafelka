@@ -76,10 +76,7 @@ def predict_class(img_path):
   answer = classes[answer]
   return answer,probability
 
-"""#Если вывод картинки не нужен, следующую ячейку можно удалить"""
-
 import matplotlib.pyplot as plt
-img='/content/123-1168_jpg.rf.2882f74b2ee30603cf7213d52c65b79a.jpg'
 
 def print_result(img_path):
   answer,prob = predict_class(img_path)
@@ -87,5 +84,3 @@ def print_result(img_path):
   img = np.array(load_image(img_path))
   plt.imshow(img)
   plt.show()
-
-print_result(img)
