@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+
+    .centered-container {
+        width: 80%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+	img {
+		width: 100%;
+		max-width: 400px;
+		border-bottom: 2px solid #dddddd;
+		padding-bottom: 20px;
+	}
+
+	p {
+		margin: 20px 0;
+		font-size: 18px;
+		color: #333333;
+	}
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {
+        background-color: #3e8e41
+    }
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction</title>
+
+</head>
+
+<body>
+    <div class="centered-container">
+        <h1>Diabetic Retinopathy</h1>
+        <h2>Ваш снимок</h2>
+        <img src="{{ url_for('static', filename='predict.jpg') }}">
+        <h2>{{ predict }}</h2>
+        <a href="/" class="button">Перейти у форме загрузки</a>
+    </div>
+</body>
+</html>
