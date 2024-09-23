@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Retinopaty</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .centered-container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-bottom: 2px solid #dddddd;
+            padding-bottom: 20px;
+        }
+
+        p {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+            .button:hover {
+                background-color: #3e8e41
+            }
+
+            .button:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+        /* Styling for the form */
+        .custom-form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+            box-shadow: 0 9px #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-container">
+        <img src="{{ url_for('static', filename='main_image.jpeg') }}">
+        <p>Загрузите свой файл</p>
+        <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data" class="custom-form">
+            <label for="file-upload">Выберите файл:</label>
+            <input name="file" type="file" id="user-upload" required>
+            <br><br>
+            <button type=submit class="button" id="submitBtn">Отправить</button>
+        </form>
+        <a href="/" class="button"> Убрать выбранный файл</a>
+    </div>
+</body>
+</html>
